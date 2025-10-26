@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
   modelValue?: string | number
   type?: string
   placeholder?: string
@@ -17,8 +17,7 @@ defineEmits<{
 
 const baseClasses = [
   'w-full',
-  // 'px-3',
-  // 'py-2',
+
   'border',
   'rounded-lg',
   'focus:ring-2',
