@@ -17,10 +17,10 @@ function logout() {
   <header class="bg-white border-b border-gray-200">
     <div class="container mx-auto px-4">
       <div class="flex justify-between h-16">
-        <RouterLink to="/" class="flex items-center space-x-2">
+        <div class="flex items-center space-x-2">
           <File class="w-8 h-8 text-blue-600" />
           <span class="text-xl font-bold text-gray-900">ZenFlow</span>
-        </RouterLink>
+        </div>
 
         <nav class="flex items-center">
           <div v-if="authStore.user" class="flex items-center space-x-6">
