@@ -16,7 +16,7 @@ defineEmits<{
 }>();
 
 const baseClasses = [
-  'w-full',
+  'w-full mt-1 block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-colors duration-200',
 
   'border',
   'rounded-lg',

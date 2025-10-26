@@ -174,7 +174,7 @@ onMounted(async () => {
               id="title"
               v-model="formData.title"
               :disabled="ticketStore.isLoading"
-              placeholder="Enter ticket title"
+              placeholder="Enter title"
               :class="validationErrors.title ? 'border-red-500' : ''"
             />
             <p v-if="validationErrors.title" class="mt-1 text-sm text-red-600 flex items-center gap-1">
@@ -190,7 +190,7 @@ onMounted(async () => {
               v-model="formData.description"
               rows="3"
               :disabled="ticketStore.isLoading"
-              placeholder="Enter ticket description"
+              placeholder="Enter description (optional)"
               :class="[
                 'w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500',
                 validationErrors.description ? 'border-red-500' : 'border-gray-300'
@@ -202,7 +202,7 @@ onMounted(async () => {
             </p>
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
+          <div class="flex flex-col gap-4">
             <div class="space-y-1">
               <label for="status" class="block text-sm font-medium text-gray-700">
                 Status <span class="text-red-500">*</span>
@@ -258,11 +258,11 @@ onMounted(async () => {
     <Modal :isOpen="isDeleteModalOpen" @close="isDeleteModalOpen = false">
       <div class="space-y-4">
         <div class="flex items-center gap-3">
-          <AlertCircle class="w-6 h-6 text-red-600" />
-          <h3 class="text-lg font-medium">Delete Ticket</h3>
+          <!-- <AlertCircle class="w-6 h-6 text-red-600" /> -->
+          <h3 class="text-xl font-bold">Delete Ticket</h3>
         </div>
 
-        <p>Are you sure you want to delete this ticket? This action cannot be undone.</p>
+        <p class="text-gray-500">Are you sure you want to delete this ticket? This action cannot be undone.</p>
         
         <div class="flex justify-end gap-4 mt-4">
           <Button variant="outline" @click="isDeleteModalOpen = false">
