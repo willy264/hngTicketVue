@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-defineProps<{
-  status: 'open' | 'in_progress' | 'closed'
-}>();
-
 const props = defineProps<{
   status: 'open' | 'in_progress' | 'closed'
 }>();

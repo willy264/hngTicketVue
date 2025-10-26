@@ -47,11 +47,11 @@ async function handleSubmit(e: Event) {
 <template>
   <div class="min-h-screen flex w-full">
     <div class="hidden lg:flex lg:w-1/2 justify-center relative bg-blue-600 p-12">
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+      <div class="absolute inset-0 bg-linear-to-br from-blue-600 via-blue-700 to-blue-800">
         <div
           class="absolute inset-0"
           :style="{
-            backgroundImage: `url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23fff\' fill-opacity=\'0.1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E')`,
+              backgroundImage: 'url(\'data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23fff%22 fill-opacity=%220.1%22 fill-rule=%22evenodd%22%3E%3Ccircle cx=%223%22 cy=%223%22 r=%223%22/%3E%3C/g%3E%3C/svg%3E\')',
             backgroundSize: '24px 24px'
           }"
         />
@@ -88,7 +88,9 @@ async function handleSubmit(e: Event) {
                 id="email"
                 v-model="email"
                 :disabled="isLoading"
-                class="mt-1"
+                class="mt-1 block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-colors duration-200"
+                placeholder="Enter your email"
+
               />
             </div>
 
@@ -101,26 +103,40 @@ async function handleSubmit(e: Event) {
                 id="password"
                 v-model="password"
                 :disabled="isLoading"
-                class="mt-1"
+                class="mt-1 block w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-colors duration-200"
+                placeholder="Enter your password"
               />
             </div>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span className="ml-2 text-sm text-gray-600">Remember me</span>
+            </label>
+            <a href="#" className="text-sm text-blue-600 hover:text-blue-700 hover:underline">
+              Forgot password?
+            </a>
           </div>
 
           <Button
             type="submit"
             :disabled="isLoading"
-            class="w-full"
+            class="py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 inline-flex justify-start justify-items-start items-center ease-in-out disabled:opacity-50 disabled:cursor-not-allowed hover:shadow active:bg-blue-800"
           >
             {{ isLoading ? 'Signing in...' : 'Sign in' }}
           </Button>
 
-          <p class="text-center text-sm text-gray-600">
+          <p class="text-center text-gray-600">
             Don't have an account?
             <router-link
               to="/auth/signup"
               class="font-medium text-blue-600 hover:text-blue-500"
             >
-              Sign up
+              Sign up for free
             </router-link>
           </p>
         </form>

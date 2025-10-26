@@ -123,7 +123,7 @@ onMounted(async () => {
         <h1 class="text-3xl font-bold text-gray-800">Tickets</h1>
         <p class="text-gray-600 mt-2">Manage your support tickets</p>
       </div>
-      <Button @click="() => { resetForm(); isModalOpen = true; }" class="flex items-center gap-2">
+      <Button @click="() => { resetForm(); isModalOpen = true; }" class="flex items-center">
         <Plus class="w-5 h-5" />
         Create New Ticket
       </Button>
@@ -146,22 +146,22 @@ onMounted(async () => {
             <p class="text-sm text-gray-500">{{ ticket.description }}</p>
           </div>
           <div class="flex gap-2">
-            <button @click="handleEdit(ticket)" class="text-gray-400 hover:text-blue-500 transition-colors">
+            <Button variant="secondary" @click="handleEdit(ticket)" class="text-gray-400  transition-colors">
               <Edit2 class="w-4 h-4" />
-            </button>
-            <button @click="() => { selectedTicket = ticket; isDeleteModalOpen = true; }" class="text-gray-400 hover:text-red-500 transition-colors">
+            </Button>
+            <Button variant="danger" @click="() => { selectedTicket = ticket; isDeleteModalOpen = true; }" class="text-gray-400 transition-colors">
               <Trash2 class="w-4 h-4" />
-            </button>
+            </Button>
           </div>
         </div>
-        <div class="flex gap-2">
+        <div class="mt-8 flex gap-2 justify-between">
           <StatusBadge :status="ticket.status" />
           <PriorityBadge :priority="ticket.priority" />
         </div>
       </div>
     </div>
 
-    <!-- Create/Edit Modal -->
+    <!-- create/edit -->
     <Modal :isOpen="isModalOpen" @close="() => { isModalOpen = false; resetForm(); }">
       <div class="space-y-4">
         <h2 class="text-2xl font-bold">{{ selectedTicket ? 'Edit Ticket' : 'Create New Ticket' }}</h2>
@@ -254,7 +254,7 @@ onMounted(async () => {
       </div>
     </Modal>
 
-    <!-- Delete Confirmation Modal -->
+    <!-- delete -->
     <Modal :isOpen="isDeleteModalOpen" @close="isDeleteModalOpen = false">
       <div class="space-y-4">
         <div class="flex items-center gap-3">
@@ -276,7 +276,3 @@ onMounted(async () => {
     </Modal>
   </div>
 </template>
-
-<style scoped>
-/* Any additional styles can go here */
-</style>

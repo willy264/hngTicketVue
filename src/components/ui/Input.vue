@@ -17,8 +17,8 @@ defineEmits<{
 
 const baseClasses = [
   'w-full',
-  'px-3',
-  'py-2',
+  // 'px-3',
+  // 'py-2',
   'border',
   'rounded-lg',
   'focus:ring-2',

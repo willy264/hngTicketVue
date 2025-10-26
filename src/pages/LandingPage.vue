@@ -43,11 +43,11 @@ const features = [
     </div>
 
     <section class="relative py-20 pt-10 overflow-hidden">
-      <div class="absolute top-10 right-10 w-72 h-72 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl" />
+      <div class="absolute top-10 right-10 w-72 h-72 bg-linear-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl" />
       
-      <div class="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-pink-400/10 to-orange-400/10 rounded-full blur-3xl" />
+      <div class="absolute bottom-20 left-10 w-96 h-96 bg-linear-to-br from-pink-400/10 to-orange-400/10 rounded-full blur-3xl" />
       
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-green-400/5 to-blue-400/5 rounded-full blur-2xl" />
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-linear-to-br from-green-400/5 to-blue-400/5 rounded-full blur-2xl" />
 
       <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-16">

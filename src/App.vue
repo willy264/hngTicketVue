@@ -4,10 +4,8 @@ import { useAuthStore } from './stores/auth'
 
 const auth = useAuthStore()
 
-// Initialize auth state from localStorage on app load
 auth.initialize()
 
-// No need for watch since auth store already handles persistence
 </script>
 
 <template>
@@ -15,7 +13,7 @@ auth.initialize()
 </template>
 
 <style>
-@import './styles/main.css';
+@import './style.css';
 
 #app {
   min-height: 100vh;
